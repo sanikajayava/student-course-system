@@ -12,7 +12,7 @@ app.use(express.json());
 
 console.log("Connecting to MongoDB...");
 
-mongoose.connect("mongodb+srv://student-course-cluster:655bO0BBHipCqmtI@student-course-cluster.llprb6r.mongodb.net/student-course-registration?retryWrites=true&w=majority&authSource=admin")
+mongoose.connect(process.env.MONGO_URI || "mongodb://mongo:27017/student-course-registration")
 .then(()=>console.log("MongoDB Atlas Connected"))
 .catch(err=>console.log(err));
 
