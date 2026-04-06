@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Courses</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Available Courses</h2>
+
+        <ul>
+            <% courses.forEach(course => { %>
+                <li>
+                    <strong><%= course.name %></strong> - <%= course.description %>
+                    <form action="/enroll/<%= course._id %>" method="POST" style="display:inline;">
+                        <button type="submit">Enroll</button>
+                    </form>
+                </li>
+            <% }); %>
+        </ul>
+
+        <p><a href="/dashboard">View My Enrolled Courses</a></p>
+        <p><a href="/logout">Logout</a></p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Enrolled Courses</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>My Enrolled Courses</h2>
+
+        <ul>
+            <% enrollments.forEach(enrollment => { %>
+                <li class="enrolled-course">
+                    <strong><%= enrollment.courseId.name %></strong> - <%= enrollment.courseId.description %>
+                </li>
+            <% }); %>
+        </ul>
+
+        <p><a href="/home">Back to Courses</a></p>
+        <p><a href="/logout">Logout</a></p>
+    </div>
+</body>
+</html>
